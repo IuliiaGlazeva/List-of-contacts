@@ -5,10 +5,29 @@ def read_contacts
   return JSON.parse(contacts_json, { symbolize_names: true })
 end
 
-contact = [{"Arno Fleming" =>  "+31 6 414 14141"},
-           {"Mike Farrell" =>  "+1 123 123 1234"}]
+
+
+contact = [
+  {
+    :name => "Thomas Jefferson",
+    :phone => "+1 206 310 1369",
+    :email => "tjeff@us.gov"
+  },
+  {
+    :name => "Charles Darwin",
+    :phone => "+2 360 155 8822",
+    :email => "darles@evolve.org"
+  }
+
+]
 
 def output_contacts(contact)
-  contact.map{|i| i}
+  contact.map{|i| "{#{i[:name]} => #{i[:phone]}}"}
 end
 p output_contacts(contact)
+
+
+def select_contact1(contact)
+  contact.select {|i| i[:phone].start_with?("+1")}
+end
+p select_contact1(contact)
