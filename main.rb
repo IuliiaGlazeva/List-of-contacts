@@ -31,3 +31,8 @@ def select_contact1(contact)
   contact.select {|i| i[:phone].start_with?("+1")}
 end
 p select_contact1(contact)
+
+def select_contact2(contact)
+  contact.select {|i| i[:email].end_with?("org")}
+end
+p select_contact2(contact)
