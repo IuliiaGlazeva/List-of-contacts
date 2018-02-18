@@ -11,7 +11,7 @@ contact = [
   {
     "name": "Thomas Jefferson",
     "phone": "+1 206 310 1369",
-    "email": "tjeff@us.gov"
+    "email": "tjeff@us.org"
   },
   {
     "name": "Charles Darwin",
@@ -35,6 +35,7 @@ contact = [
   }
 ]
 
+
 def output_contacts(contact)
   contact.map{|i| "{#{i[:name]} => #{i[:phone]}}"}
 end
@@ -52,8 +53,16 @@ def select_contact2(contact)
 end
 p select_contact2(contact)
 
+
 def reduce_contact1(contact)
   select_contact1(contact).reduce(0){ |sum, i|
    sum += 1}
 end
-puts reduce_contact1(contact)
+p reduce_contact1(contact)
+
+
+def reduce_contact2(contact)
+  select_contact2(contact).reduce(0){|sum, i|
+  sum += 1}
+end
+p reduce_contact2(contact)
